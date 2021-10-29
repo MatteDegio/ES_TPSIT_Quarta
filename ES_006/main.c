@@ -32,7 +32,7 @@ void stampaVettore(int v[], int n){
 
 void invertiVett(int v[], int n){
     int k, j, temp;
-    j = n - 1
+    j = n - 1;
 
     for(k = 0; k < n/2; k++){
         temp = *(v+k);
@@ -52,6 +52,7 @@ int main() {
         scanf("%d", &n);
     }while(n < 0 || n > DIM);
 
+    int *d = (int *)malloc(n*sizeof(int));
     caricaVettore(v, n);
     printf("vettore: \n");
     stampaVettore(v, n);
