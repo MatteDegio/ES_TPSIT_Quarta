@@ -15,20 +15,28 @@ void prototipo(Paziante *p){
 
 }
 
-void stampaPaziente(Paziente p){
-
+float saldoClinica(Paziente clinica[], int numPaziente){
+    float guadagno = 0;
+    for(int i = 0; i < numPaziente; i++){
+        guadagno += clinica[i].parcella;
+    }
+    printf("Guadagno totale della clinica: %.2f",guadagno);
 }
 
-double saldoClinica(PazienteClinica[], int numPaziente){
-
+void stampaPaziente(int n, Paziente clinica[]){
+    for(int i = 0; i < n; i++){
+        printf("Valori del signor %s %s:\n",clinica[i].cognome,clinica[i].nome);
+        printf("Temperatura: \n  -mattino:%d\n  -pomeriggio:%d\n  -sera:%d",clinica[i].temperature[0],clinica[i].temperature[1],clinica[i].temperature[2]);
+        printf("\nPressione: \n  -minima:%d\n  -massima:%d\n",clinica[i].pressione[0],clinica[i].pressione[1]);
+    }
 }
 
 int main() {
-    int i;
-
+    
+    int n = 0;
     Paziente rossi;
-
-    Paziente clinica(20);
+    Paziente clinica[MAX];
+    stampaPaziente(n,clinica);
 
     return 0;
 }
